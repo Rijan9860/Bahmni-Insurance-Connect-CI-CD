@@ -20,9 +20,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: | 
-        mvn clean install -DskipTests
-        exit 1
+      run: mvn clean install -DskipTests
   
   success_notify:
     needs: ['build']
