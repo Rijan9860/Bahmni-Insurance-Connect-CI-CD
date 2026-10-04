@@ -31,4 +31,12 @@ jobs:
       - name: Notify Success
         run: echo "Success email sent to the team"
 
+  failure_notify:
+    needs: ['build']
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Failure
+        run: echo "Failure email sent to the team"
+
 
